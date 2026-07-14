@@ -1,5 +1,7 @@
 package com.healthmemory.ai.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.healthmemory.ai.model.JournalEntry;
@@ -14,7 +16,9 @@ public class JournalEntryService {
 	public JournalEntry saveEntry(JournalEntry entry) {
 	    return repository.save(entry);
 	}
-
+	public List<JournalEntry> getallEntries(){
+		return repository.findAll();
+	}
 	
 }
  

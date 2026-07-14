@@ -1,5 +1,8 @@
 package com.healthmemory.ai.controller;
 
+import java.util.List;
+
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,5 +24,10 @@ public class JournalEntryController {
     @PostMapping
     public JournalEntry saveJournal(@RequestBody JournalEntry entry) {
         return service.saveEntry(entry);
+    }
+    @GetMapping
+    public List<JournalEntry> getAllJournals(){
+    	return service.getallEntries();
+    	
     }
 }
